@@ -18,3 +18,21 @@ A deadlock demo with nested synchronized block. This demo demonstrates one threa
 > - Avoid nested locks. Always acquire locks in the same order. For example, to fix the deadlock in demo, just need to change the order of synchronized block.
 > - Avoid unnecessary locks. Lock particular field of object instead of locking whole object. 
 > - Use thread join().
+
+## ThreadPool and Executors
+Thread pool reuse previously created threads to execute current tasks and offers a solution to the problem of thread cycle overhead and resource thrashing. 
+> ### Stesp to creat ExecutorService: 
+> - Create a task (Runnable object) to execute
+> - Create ExecutorService using Executors
+> - ExecutorService executes the tasks
+> - Shutdown the ExecutorService
+> _(refer to package: executorService)_
+> ### ExecutorService Methods: 
+> - newFixedThreadPool(int)
+> - newCachedThreadPool()
+> - newSingleThreadExecutor()
+> ### Runnable vs Callable
+> Runnable interface is similar with Callable interface. Both interfaces represent a task that can be executed concurrently by a thread or ExecutorService. Main different between Runnalbe interface and Callable interface are: 
+> - Runnable interface has run() method, Callable interface has call() method which can return an object from the call. 
+> - call() method can throw an Exception, run() method cannot. 
+> _(refer to package: callable)_ 
